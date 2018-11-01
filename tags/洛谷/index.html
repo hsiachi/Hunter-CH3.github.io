@@ -346,24 +346,25 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/10/25/test/记录一下使用hexo的一些小问题/">
+        <a class="abstract-title" href="/2018/11/01/test/P1028 数的计算/">
             
-                <span>记录一下使用hexo的一些小问题</span>
+                <span>P1028 数的计算</span>
         </a>
         <div class="abstract-content">
-            使用图片的时候不要使用内联！如果图片不多的话可以在source目录里新建一个文件夹然后把图片复制过去，但是如果图片太多的话建议使用图床！
-
+            题目[洛谷|P1028|数的计算][ https://www.luogu.org/problemnew/show/P1028]
+思路递归直接上代码
+1234567891011121314#include&lt;cstdio&gt;using namespace std;int n,cnt=1;void func(int x)&#123;    for(int i=1;i&lt;=x/2;i++)&#123;        cnt++;        func(i);    &#125;&#125;int main()&#123;    scanf("%d",&amp;n);    fun...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/25</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="洛谷">洛谷</a>
     
 </div>
             
