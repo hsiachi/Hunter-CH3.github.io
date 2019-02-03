@@ -346,6 +346,33 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/02/02/RMQ-ST表/">
+            
+                <span>RMQ ST表</span>
+        </a>
+        <div class="abstract-content">
+            RMQ 问题$ RMQ(Range Maximum/Minimum Query) $指，给定一个长度为$ n $的序列，多次询问区间$ [i, j] $内最值的问题。针对RMQ问题有许多处理方法，例如线段树等。本文主要讨论静态序列下的一种优良算法——ST表。
+ST表ST表是一种利用dp思想求解区间最值的算法。下面以求解最大值为例，演示ST表如何实现预处理和查询。
+令$ f[i, j] $表示$ [i, i + 2^j - 1] $这段长为$ 2^j $的区间内的最大值。
+初始状态：$ f[i, 0] = a_i $,即区间$ [i, i] $内的最大值为$ a_i $。
+状态转移：将$ ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/02</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2018/11/05/C++语法/函数/">
             
                 <span>函数</span>
@@ -422,7 +449,7 @@
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="洛谷">洛谷</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="洛谷 刷题">洛谷 刷题</a>
     
 </div>
             
@@ -553,9 +580,16 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 3
+        Total : 4
         </div>
         <!-- search  -->
         
@@ -565,6 +599,20 @@
     
     
     
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/02</span><a class="archive-post-title" href="/2019/02/02/RMQ-ST表/">RMQ ST表</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
@@ -576,12 +624,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/算法/素数筛法/">素数筛法</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/刷题记录/P1028 数的计算/">P1028 数的计算</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/刷题记录/P1028 数的计算/">P1028 数的计算</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/算法/素数筛法/">素数筛法</a>
         </li>
     
     </ul></div>
@@ -589,9 +637,9 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="洛谷"><span class="iconfont-archer">&#xe606;</span>洛谷</span>
-    
         <span class="sidebar-tag-name" data-tags="筛法"><span class="iconfont-archer">&#xe606;</span>筛法</span>
+    
+        <span class="sidebar-tag-name" data-tags="洛谷 刷题"><span class="iconfont-archer">&#xe606;</span>洛谷 刷题</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
