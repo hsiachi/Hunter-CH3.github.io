@@ -22,7 +22,7 @@
     <meta name="description" content="THU CS �ڶ�">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>P1028 数的计算 · HSIA CHI&#39;s Blog</title>
+    <title>分块 · HSIA CHI&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">Hello World!</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">P1028 数的计算</a>
+                <a href="#" class="post-name">分块</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            P1028 数的计算
+            分块
             <!-- 404 -->
             
         </h1>
@@ -264,20 +264,14 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="洛谷 刷题">洛谷 刷题</a>
-    
-</div>
-                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">254</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">621</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/11/01</span>
+                    <span class="post-intro-time">2019/02/05</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,33 +395,36 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>[洛谷|P1028|数的计算][ <a href="https://www.luogu.org/problemnew/show/P1028" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P1028</a>]</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>直接上代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,cnt=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=x/<span class="number">2</span>;i++)&#123;</span><br><span class="line">        cnt++;</span><br><span class="line">        func(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    func(n);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="递推"><a href="#递推" class="headerlink" title="递推"></a>递推</h3><p>考虑到有数学关系</p>
+        <p>分块是用来解决区间问题的。</p>
+<p>分块，顾名思义，就是将区间分成若干块，记录下各个子区间的信息，在查询时整合各个区间的信息。</p>
+<h2 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h2><p>分块，分成几块？<del>研究表明</del>，当将区间划分为$\sqrt n$块时，总查询时间最快。（证明过程参见<em>参考资料</em>）</p>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>下面以一道例题来演示分块思想。</p>
 <blockquote>
-<p>f(x) = f(1) + f(2) + … + f(x / 2)</p>
+<p>【例题】有一个长度为$n$的序列，执行$n$个操作：</p>
+<ol>
+<li>修改某位置的元素的值。</li>
+<li>将一段区间的元素加上或减去一个值。</li>
+<li>求一段区间的元素最大值。</li>
+</ol>
+<p>$n, m \le 50000 $</p>
 </blockquote>
-<p>从而有</p>
-<blockquote>
-<p>x % 2 == 0:</p>
-<p>f(x) = f(x - 1) + f(x / 2)</p>
-<p>x % 2 == 1:</p>
-<p>f(x) = f(x - 1);</p>
-</blockquote>
-<p>因此可以开一个数组，从1到n进行遍历，利用递推得到结果</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 1005</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> num[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    num[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">            num[i] == num[i - <span class="number">1</span>] + num[i / <span class="number">2</span>];</span><br><span class="line">        <span class="keyword">else</span> num[i] = num[i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; num[n];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>递推的思想中包含了“<strong>记忆化搜索</strong>”，即建一个数表用来存储算过的值，如果这个值算过就直接调用不再计算，常见的代码行为</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a[i]) <span class="keyword">return</span> a[i];</span><br></pre></td></tr></table></figure>
+<p>首先，我们需要用一个$region_id[]$记录每一个元素所属的区间。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n, a[MAXN], region_id[MAXN];</span><br><span class="line"><span class="keyword">int</span> s, c = <span class="number">0</span>, st[MAXN], ed[MAXN];</span><br><span class="line"><span class="keyword">int</span> sum[MAXN];</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">n:元素个数 a:元素 region_id[]：每个元素所属区间编号</span></span><br><span class="line"><span class="comment">s:区间长度 c:区间个数 st[]/ed[]：区间的左右边界</span></span><br><span class="line"><span class="comment">sum[]:记录各个区间内的元素之和</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preprocess</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    s = <span class="keyword">int</span>(<span class="built_in">sqrt</span>(<span class="keyword">double</span>(n)));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i+= s)</span><br><span class="line">    &#123;</span><br><span class="line">        st[++c] = i;</span><br><span class="line">        ed[c] = max(i + s - <span class="number">1</span>, n);	<span class="comment">//可能会越界</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= c; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = st[i]; j &lt;= ed[i]; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            region_id[j] = i;</span><br><span class="line">            sum[i] += a[j];</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单点修改&amp;区间修改：引入数组$delta[]$，当一个区间块被统一修改时才会改变这个区间的$delta$值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//区间单点修改</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update_single</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    a[i] += k;</span><br><span class="line">    sum[region_id[i]] += k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//区间修改</span></span><br><span class="line"><span class="keyword">int</span> delta[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update_range</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = region_id[x], r = region_id[y];</span><br><span class="line">    <span class="keyword">if</span> (l == r &amp;&amp; st[l] == x &amp;&amp; ed[r] == y)</span><br><span class="line">    &#123;</span><br><span class="line">        delta[l] += k;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (l == r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= y; i++)</span><br><span class="line">            update_single(i, k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= ed[l]; i++)</span><br><span class="line">            update_single(i, k);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = st[r]; i &lt;= y; i++)</span><br><span class="line">            update_single(i, k);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = l + <span class="number">1</span>; i &lt; r; i++)</span><br><span class="line">            delta[i] += k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>区间询问：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = region_id[x], r = region_id[y];</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (l == r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= y; i++)</span><br><span class="line">            ans += a[i] + delta[region_id[i]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= ed[l]; i++)</span><br><span class="line">            ans += a[i] + delta[region_id[l]];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = st[r]; i&lt;= y; i++)</span><br><span class="line">            ans += a[i] + delta[region_id[r]];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = l + <span class="number">1</span>; i &lt; r; i++)</span><br><span class="line">            ans += sum[i] + delta[i] * (ed[i] - st[i] + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>分块程序的时间复杂度为$O(\sqrt n * m)$。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://pks-loving.blog.luogu.org/senior-data-structure-gao-ji-shuo-ju-jie-gou-chu-bu-yang-xie-fen-kuai" target="_blank" rel="noopener">https://pks-loving.blog.luogu.org/senior-data-structure-gao-ji-shuo-ju-jie-gou-chu-bu-yang-xie-fen-kuai</a></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://yoursite.com">HSIA CHI</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2018/11/01/刷题记录/P1028 数的计算/">http://yoursite.com/2018/11/01/刷题记录/P1028 数的计算/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2018/11/01/刷题记录/P1028 数的计算/">November 1st 2018, 10:20:37 am</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2018/11/01/刷题记录/P1028 数的计算/">December 4th 2018, 11:16:32 am</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/02/05/分块/">http://yoursite.com/2019/02/05/分块/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/02/05/分块/">February 5th 2019, 6:02:04 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/02/05/分块/">February 6th 2019, 10:05:24 am</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -435,13 +432,13 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2018/11/01/算法/素数筛法/" title="素数筛法">
-                    <div class="nextTitle">素数筛法</div>
-                </a>
-            
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/02/04/树状数组/" title="树状数组">
+                    <div class="prevTitle">树状数组</div>
+                </a>
             
         </li>
     </ul>
@@ -559,7 +556,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#递归"><span class="toc-number">2.1.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递推"><span class="toc-number">2.2.</span> <span class="toc-text">递推</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本性质"><span class="toc-number">1.</span> <span class="toc-text">基本性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体实现"><span class="toc-number">2.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间复杂度"><span class="toc-number">3.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

@@ -346,6 +346,43 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/02/05/分块/">
+            
+                <span>分块</span>
+        </a>
+        <div class="abstract-content">
+            分块是用来解决区间问题的。
+分块，顾名思义，就是将区间分成若干块，记录下各个子区间的信息，在查询时整合各个区间的信息。
+基本性质分块，分成几块？研究表明，当将区间划分为$\sqrt n$块时，总查询时间最快。（证明过程参见参考资料）
+具体实现下面以一道例题来演示分块思想。
+
+【例题】有一个长度为$n$的序列，执行$n$个操作：
+
+修改某位置的元素的值。
+将一段区间的元素加上或减去一个值。
+求一段区间的元素最大值。
+
+$n, m \le 50000 $
+
+首先，我们需要用一个$region_id[]$记录每一个元素所属的区间。
+1234567891011121314151617181920...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/02/04/树状数组/">
             
                 <span>树状数组</span>
@@ -380,7 +417,11 @@ $ sum(i)(1 \le i \le n) ​$         统计$ [1, i] ​$元素值的和       $ 
                 <span>线段树</span>
         </a>
         <div class="abstract-content">
-            
+            线段树的概念线段树是一种二叉搜索树，即每个节点最多有两个子树的树结构。而由于每个节点存储的是一个区间（线段）内的信息，因此叫做线段树。
+
+线段树是如何构造的呢？对于一个区间$[l, r]$,当$l \ne r$时，设$mid = （l + r) / 2$，则取区间$[l,mid]$和$[mid + 1, r]$作为该节点的子区间。当$l = r$时，该节点为叶节点。
+由上述构造过程可以看到，对于一颗线段树，不可能出现只有一个子节点的情况；线段树是一颗平衡树（即任意一个节点的子树树高差值的绝对值不超过1），树高为$O(logn)$。
+实际上，线段树与分块思想相似，都是将一个区间内的信息整合...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -653,9 +694,20 @@ ST表ST表是一种利用dp思想求解区间最值的算法。下面以求解�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 6
+        Total : 7
         </div>
         <!-- search  -->
         
@@ -668,6 +720,11 @@ ST表ST表是一种利用dp思想求解区间最值的算法。下面以求解�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/05</span><a class="archive-post-title" href="/2019/02/05/分块/">分块</a>
+        </li>
     
     
         <li class="archive-post-item">
