@@ -351,13 +351,7 @@
                 <span>函数</span>
         </a>
         <div class="abstract-content">
-            函数如何实现返回多个值？
-1234567891011void func(int* retval)&#123;    ...&#125;int main()&#123;    ...    int ans[10];    func(ans);&#125;
-函数形参复制了实参的指针，因此对于指针指向的变量的修改会直接作用。
-思考：能否通过下列代码实现返回多值？
-123456int* func()&#123;    int* retval;    ...    return retval;&#125;
-不能。
-该语句符合语法，但是没有任何作用。函数内的变量是临时的，在函数内定义的变量所占用的栈...
+            <p>这是关于C++中函数语法的注意事项。</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -380,7 +374,7 @@
                 <span>素数筛法</span>
         </a>
         <div class="abstract-content">
-            最基本的素数判定123456789101112131415bool prime = true;int num[n] = &#123;0&#125;;for(int i = 1; i &lt;= n; i++)&#123;	prime = true;    for (int j = 2; j &lt;= sqrt(i); j++)    &#123;        if (i % j == 0)        &#123;            prime = false;            break;        &#125;    &#125;    num[i] += pri...
+            <p>介绍了埃式筛法和欧拉筛法的基本思路。</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -409,9 +403,10 @@
                 <span>P1028 数的计算</span>
         </a>
         <div class="abstract-content">
-            题目[洛谷|P1028|数的计算][ https://www.luogu.org/problemnew/show/P1028]
+            
+题目[洛谷|P1028|数的计算][ https://www.luogu.org/problemnew/show/P1028]
 思路递归直接上代码
-1234567891011121314#include&lt;cstdio&gt;using namespace std;int n,cnt=1;void func(int x)&#123;    for(int i=1;i&lt;=x/2;i++)&#123;        cnt++;        func(i);    &#125;&#125;int main()&#123;    scanf("%d",&amp;n);    fun...
+1234567891011121314#include&lt;cstdio&gt;using namespace std;int n,cnt=1;void func(int x)&#123;    for(int i=1;i&lt;=x/2;i++)&#123;        cnt++;        func(i);    &#125;&#125;int main()&#123;    scanf("%d",&amp;n);    fu...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -587,9 +582,28 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 7
+        Total : 8
         </div>
         <!-- search  -->
         
@@ -602,6 +616,11 @@
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href="/2019/02/06/刷题记录/P1908 逆序对/">P1908 逆序对</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -639,12 +658,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/刷题记录/P1028 数的计算/">P1028 数的计算</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/算法/素数筛法/">素数筛法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/算法/素数筛法/">素数筛法</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/刷题记录/P1028 数的计算/">P1028 数的计算</a>
         </li>
     
     </ul></div>
@@ -652,9 +671,11 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="洛谷 刷题"><span class="iconfont-archer">&#xe606;</span>洛谷 刷题</span>
+    
         <span class="sidebar-tag-name" data-tags="筛法"><span class="iconfont-archer">&#xe606;</span>筛法</span>
     
-        <span class="sidebar-tag-name" data-tags="洛谷 刷题"><span class="iconfont-archer">&#xe606;</span>洛谷 刷题</span>
+        <span class="sidebar-tag-name" data-tags="洛谷"><span class="iconfont-archer">&#xe606;</span>洛谷</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
