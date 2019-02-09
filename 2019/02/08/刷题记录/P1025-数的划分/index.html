@@ -22,7 +22,7 @@
     <meta name="description" content="THU CS �ڶ�">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>HSIA CHI&#39;s Blog</title>
+    <title>P1025 数的划分 · HSIA CHI&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Hello World!</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">P1025 数的划分</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Hello World!</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World!
-            <!-- 文章页  -->
+            P1025 数的划分
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                Welcome to my blog.
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="洛谷">洛谷</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">373</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/02/08</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,430 +399,68 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/09/刷题记录/P1182-数列分段-Section-Ⅱ/">
-            
-                <span>P1182 数列分段 Section Ⅱ</span>
-        </a>
-        <div class="abstract-content">
-            题目传送门|P1182 数列分段 Section Ⅱ
-总而言之就是求解最大值的最小化。
-二分搜索显然，解落在$[max(a_i), \sum a_i]$之间，因此考虑使用二分搜索。
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869#include &lt;iostream&gt;using namespace std;#define MAXN 100005int n, m, a[M...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="洛谷">洛谷</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><a href="https://www.luogu.org/problemnew/show/P1025" target="_blank" rel="noopener">传送门|P1025 数的划分</a></p>
+<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cnt, k, n;	<span class="comment">//cnt用来计数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> last, <span class="keyword">int</span> num, <span class="keyword">int</span> cur)</span>	</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/*为了保证不重复，搜索时要确保每一次的数比上一次大，所以用last记录上一次选择的数字；</span></span><br><span class="line"><span class="comment">    num记录目前已经累计的数字，cur表示已经分成了几组*/</span></span><br><span class="line">	<span class="keyword">if</span> (cur == k) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="keyword">if</span> (num == n)</span><br><span class="line">			cnt++;</span><br><span class="line">		<span class="keyword">return</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = last; num + i * (k - cur) &lt;= n; i++)	<span class="comment">//剪枝</span></span><br><span class="line">		dfs(i, num + i, cur + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">	dfs(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; cnt;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h2><p>设$f[i, j]$表示将$i$分成$j$组的方案数。</p>
+<p>状态转移方程为：$f[i, j] = f[i - 1, j - 1] + f[i - j, j]$</p>
+<p>初始状态：$f[i, 1] = 1$</p>
+<p>解释：</p>
+<p>由于不考虑顺序，因此不妨将分组情况按升序排序。</p>
+<p>方案分成两种：</p>
+<ol>
+<li>首位为1。对于这一类分组，其方案数等于$f[i-1, j-1]$。</li>
+<li>首位不为1。对于这一类分组，如果从每一组中拿走1，不会改变方案数；此时方案数等于$f[i-j, j]$。</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, k, f[<span class="number">205</span>][<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        f[i][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        f[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= k; j++)</span><br><span class="line">            <span class="keyword">if</span> (j &lt; i)</span><br><span class="line">                f[i][j] = f[i - <span class="number">1</span>][j - <span class="number">1</span>] + f[i - j][j];</span><br><span class="line">    		<span class="keyword">else</span></span><br><span class="line">                f[i][j] = f[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f[n][k];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/08/C++语法/C++队列/">
-            
-                <span>C++队列</span>
-        </a>
-        <div class="abstract-content">
-            由于还没有系统地学过C++语法…所以这部分只能浅显的记录在做题时所用到的队列相关知识(以及bfs模板)。
-queue语法头文件：
-变量声明：queue name;
-常用类函数：
-
-
-
-
-类函数名称
-类函数功能
-
-
-
-
-front()
-获得队首元素（不弹出）
-
-
-back()
-获得队尾元素（不弹出）
-
-
-push()
-将元素压入队尾
-
-
-pop()
-将队首元素弹出
-
-
-size()
-获取队列元素个数
-
-
-empty()
-判断队列是否为空，若为空，返回true
-
-
-
-
-bfs模板1234567891011121314151617181920212223242526#include &lt;i...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">HSIA CHI</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/02/08/刷题记录/P1025-数的划分/">http://yoursite.com/2019/02/08/刷题记录/P1025-数的划分/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/02/08/刷题记录/P1025-数的划分/">February 8th 2019, 5:59:21 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/02/08/刷题记录/P1025-数的划分/">February 8th 2019, 6:29:51 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/08</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/08/刷题记录/P1025-数的划分/">
-            
-                <span>P1025 数的划分</span>
-        </a>
-        <div class="abstract-content">
-            题目传送门|P1025 数的划分
-DFS123456789101112131415161718192021222324252627#include &lt;iostream&gt;using namespace std;int cnt, k, n;	//cnt用来计数void dfs(int last, int num, int cur)	&#123;    /*为了保证不重复，搜索时要确保每一次的数比上一次大，所以用last记录上一次选择的数字；    num记录目前已经累计的数字，cur表示已经分成了几组*/	if (cur == k) 	&#123; 		if (num == n)...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="洛谷">洛谷</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/06/刷题记录/P1908 逆序对/">
-            
-                <span>P1908 逆序对</span>
-        </a>
-        <div class="abstract-content">
-            <p>利用分治/树状数组解决逆序对问题。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="洛谷">洛谷</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/05/分块/">
-            
-                <span>分块</span>
-        </a>
-        <div class="abstract-content">
-            
-分块是用来解决区间问题的。
-分块，顾名思义，就是将区间分成若干块，记录下各个子区间的信息，在查询时整合各个区间的信息。
-基本性质分块，分成几块？研究表明，当将区间划分为$\sqrt n$块时，总查询时间最快。（证明过程参见参考资料）
-具体实现下面以一道例题来演示分块思想。
-
-【例题】有一个长度为$n$的序列，执行$n$个操作：
-
-修改某位置的元素的值。
-将一段区间的元素加上或减去一个值。
-求一段区间的元素最大值。
-
-$n, m \le 50000 $
-
-首先，我们需要用一个$region_id[]$记录每一个元素所属的区间。
-123456789101112131415161718192...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/04/树状数组/">
-            
-                <span>树状数组</span>
-        </a>
-        <div class="abstract-content">
-            
-前言树状数组（$ Binary Indexed Tree, BIT $，二分索引树）是一种轻量级的数据结构。它只有两种基本操作：
-
-$ add(i, 1) (1 \le i \le n) $    对第$ i $个元素的值自增1    $ O(logn) $
-$ sum(i)(1 \le i \le n) ​$         统计$ [1, i] ​$元素值的和       $ O(logn) ​$ 
-
-树状数组结构从名称中可以看到，树状数组既有树的父子节点关系，又有数组的物理空间连续存储的特性。那么如何通过数组实现树的父子节点关系呢？
-我们定义，对于数组中的两个索引$ x $和$ ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/04/线段树/">
-            
-                <span>线段树</span>
-        </a>
-        <div class="abstract-content">
-            
-线段树的概念线段树是一种二叉搜索树，即每个节点最多有两个子树的树结构。而由于每个节点存储的是一个区间（线段）内的信息，因此叫做线段树。
-
-线段树是如何构造的呢？对于一个区间$[l, r]$,当$l \ne r$时，设$mid = （l + r) / 2$，则取区间$[l,mid]$和$[mid + 1, r]$作为该节点的子区间。当$l = r$时，该节点为叶节点。
-由上述构造过程可以看到，对于一颗线段树，不可能出现只有一个子节点的情况；线段树是一颗平衡树（即任意一个节点的子树树高差值的绝对值不超过1），树高为$O(logn)$。
-实际上，线段树与分块思想相似，都是将一个区间内的信息整...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/02/RMQ-ST表/">
-            
-                <span>RMQ ST表</span>
-        </a>
-        <div class="abstract-content">
-            <p>利用ST表解决RMQ问题。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/02</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/11/05/C++语法/函数/">
-            
-                <span>函数</span>
-        </a>
-        <div class="abstract-content">
-            <p>这是关于C++中函数语法的注意事项。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/11/01/算法/素数筛法/">
-            
-                <span>素数筛法</span>
-        </a>
-        <div class="abstract-content">
-            <p>介绍了埃式筛法和欧拉筛法的基本思路。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="筛法">筛法</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/avatar/photo.jpg">
-    <div class="profile-name">HSIA CHI</div>
-    
-    <div class="profile-signature">
-        THU CS 在读
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/02/08/C++语法/C++队列/" title="C++队列">
+                    <div class="nextTitle">C++队列</div>
+                </a>
             
-                <a href="mailto:hunterxiaqi@hotmail.com" class="iconfont-archer email" title="email"></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/02/06/刷题记录/P1908 逆序对/" title="P1908 逆序对">
+                    <div class="prevTitle">P1908 逆序对</div>
+                </a>
             
-                <a href="//github.com/Hunter-CH3" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/QRcode.jpg">
-                </span>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-            
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -857,6 +543,24 @@ $ sum(i)(1 \le i \le n) ​$         统计$ [1, i] ​$元素值的和       $ 
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFS"><span class="toc-number">2.</span> <span class="toc-text">DFS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DP"><span class="toc-number">3.</span> <span class="toc-text">DP</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1131,6 +835,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
