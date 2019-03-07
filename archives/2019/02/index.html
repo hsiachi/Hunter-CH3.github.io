@@ -374,10 +374,7 @@
                 <span>P1282 多米诺骨牌</span>
         </a>
         <div class="abstract-content">
-            题目传送门|P1282 多米诺骨牌
-题解动态规划。
-题目中有两个变量：旋转次数和上下两行的点数之差。考虑将其中一个设为DP数组下标，另一个为DP数组元素。但是点数之差有正有负，很难很好地区分。观察到题目中只对同一列上下进行交换，因此无论如何交换，前$i$列的元素之和都是固定的。因此可以设$f[i][j]$表示取前$i$列时上面一行元素之和为$j$时的最小交换次数。
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354#include &lt;i...
+            
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -408,11 +405,7 @@
                 <span>P1020 导弹拦截</span>
         </a>
         <div class="abstract-content">
-            题目传送门|P1020 导弹拦截
-题解这道题分为两个问题，第一问显然是最长不增子序列；我们先解决这个问题。
-最长递增子序列（LIS）$O(n^2)$版本处理该问题最直接的思路是DP，定义$f[i]​$表示以$a[i]​$结尾的最长递增子序列长度，那么可以得到转移方程：$f[i] = max(f[j]) + 1\ \ \ for \ any \ j \lt i​$，用两层循环可以实现，复杂度为$O(n^2)​$。
-$O(nlogn)$版本如何将复杂度降到$O(nlogn)$呢？有两种方法。
-第一种方法仍然是DP。定义$f[i]$表示使得递增子序列长度为$i$时末位数最小的数，比如对于序列 ...
+            
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -447,14 +440,7 @@ $O(nlogn)$版本如何将复杂度降到$O(nlogn)$呢？有两种方法。
                 <span>P1030 求先序排列</span>
         </a>
         <div class="abstract-content">
-            题目P1030|求先序排列
-题解
-先序排列：中左右
-中序排列：左中右
-后序排列：左右中
-
-分析可知，后序排列的最后一个节点就是根节点；先序排列中，根节点左侧的全部属于左子树，根节点右侧的全部属于右子树。例如，对于中序排列$BADC$和后序排列$BDCA$，必有根节点为$A$，因此左子树为$B$，右子树为$DC$，再重复上述步骤即可。
-1234567891011121314151617181920212223242526272829303132333435#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;...
+            
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -483,13 +469,7 @@ $O(nlogn)$版本如何将复杂度降到$O(nlogn)$呢？有两种方法。
                 <span>P1045 麦森数</span>
         </a>
         <div class="abstract-content">
-            题目传送门|P045 麦森数
-高精快速幂对于第一个问题，我们知道$10^k$的位数为$k + 1$，对于$2^P-1$，其位数和$2^P$相同，因为后者末位不可能为0。因此我们只需求解后者的位数。设$2^P = 10^k$，有$k=log{10}2\times P$，因此最终位数为$log{10}2 \times P + 1$。
-下面我们将介绍快速幂。
-对于一个二次幂$2^P$，我们可以通过位运算实现复杂度为$O(n)$的算法，然而我们可以将复杂度降到$O(logn)$。
-我们可以得到：
-$2^P = (2^{P/2})^2$ (P为偶数)
-$2^P = (2^{P/2})^2\time...
+            
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -522,12 +502,7 @@ $2^P = (2^{P/2})^2\time...
                 <span>P1032 字串变换</span>
         </a>
         <div class="abstract-content">
-            题目传送门|P1032 字串变换
-显而易见的BFS虽然说是显而易见的bfs，但是这题涉及的字符串的处理还是有点头疼的。
-字符串的替代可以用中的replace()函数，使用方法为：
-12str.replace(begin, length, str_to_replace)	//begin是指从哪一位开始替换，length是替换长度，str_to_replace是要被换成的字符串
-在一般的bfs题目中，会用一个数组记录该情况是否已经访问过，但是由于字符串的特殊性，无法用数组存储，因此可以用C++中的map。[map相关知识点戳这里（假装有个链接）]
-1234567891011121314151...
+            
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -562,10 +537,7 @@ $2^P = (2^{P/2})^2\time...
                 <span>P1182 数列分段 Section Ⅱ</span>
         </a>
         <div class="abstract-content">
-            题目传送门|P1182 数列分段 Section Ⅱ
-总而言之就是求解最大值的最小化。
-二分搜索显然，解落在$[max(a_i), \sum a_i]$之间，因此考虑使用二分搜索。
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374#include &lt;iostream&gt;using namespace std;#define MAXN 100005int...
+            
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -598,47 +570,7 @@ $2^P = (2^{P/2})^2\time...
                 <span>C++队列</span>
         </a>
         <div class="abstract-content">
-            由于还没有系统地学过C++语法…所以这部分只能浅显的记录在做题时所用到的队列相关知识(以及bfs模板)。
-queue语法头文件：
-变量声明：queue name;
-常用类函数：
-
-
-
-
-类函数名称
-类函数功能
-
-
-
-
-front()
-获得队首元素（不弹出）
-
-
-back()
-获得队尾元素（不弹出）
-
-
-push()
-将元素压入队尾
-
-
-pop()
-将队首元素弹出
-
-
-size()
-获取队列元素个数
-
-
-empty()
-判断队列是否为空，若为空，返回true
-
-
-
-
-bfs模板1234567891011121314151617181920212223242526#include &lt;i...
+            
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -671,8 +603,7 @@ bfs模板1234567891011121314151617181920212223242526#include &lt;i...
                 <span>P1025 数的划分</span>
         </a>
         <div class="abstract-content">
-            题目传送门|P1025 数的划分
-DFS123456789101112131415161718192021222324252627#include &lt;iostream&gt;using namespace std;int cnt, k, n;	//cnt用来计数void dfs(int last, int num, int cur)	&#123;    /*为了保证不重复，搜索时要确保每一次的数比上一次大，所以用last记录上一次选择的数字；    num记录目前已经累计的数字，cur表示已经分成了几组*/	if (cur == k) 	&#123; 		if (num == n)...
+            
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1017,12 +948,6 @@ DFS123456789101112131415161718192021222324252627#include &lt;iostream&gt;using n
     
     
     
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 17
@@ -1125,12 +1050,12 @@ DFS123456789101112131415161718192021222324252627#include &lt;iostream&gt;using n
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/算法/素数筛法/">素数筛法</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/刷题记录/P1028 数的计算/">P1028 数的计算</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/刷题记录/P1028 数的计算/">P1028 数的计算</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/算法/素数筛法/">素数筛法</a>
         </li>
     
     </ul></div>
@@ -1148,9 +1073,7 @@ DFS123456789101112131415161718192021222324252627#include &lt;iostream&gt;using n
     
         <span class="sidebar-tag-name" data-tags="洛谷"><span class="iconfont-archer">&#xe606;</span>洛谷</span>
     
-        <span class="sidebar-tag-name" data-tags="DFS"><span class="iconfont-archer">&#xe606;</span>DFS</span>
-    
-        <span class="sidebar-tag-name" data-tags="DP"><span class="iconfont-archer">&#xe606;</span>DP</span>
+        <span class="sidebar-tag-name" data-tags="递推"><span class="iconfont-archer">&#xe606;</span>递推</span>
     
         <span class="sidebar-tag-name" data-tags="最长递增子序列"><span class="iconfont-archer">&#xe606;</span>最长递增子序列</span>
     
@@ -1158,7 +1081,13 @@ DFS123456789101112131415161718192021222324252627#include &lt;iostream&gt;using n
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
-        <span class="sidebar-tag-name" data-tags="递推"><span class="iconfont-archer">&#xe606;</span>递推</span>
+        <span class="sidebar-tag-name" data-tags="DFS"><span class="iconfont-archer">&#xe606;</span>DFS</span>
+    
+        <span class="sidebar-tag-name" data-tags="DP"><span class="iconfont-archer">&#xe606;</span>DP</span>
+    
+        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
+    
+        <span class="sidebar-tag-name" data-tags="map"><span class="iconfont-archer">&#xe606;</span>map</span>
     
         <span class="sidebar-tag-name" data-tags="快速幂"><span class="iconfont-archer">&#xe606;</span>快速幂</span>
     
@@ -1167,10 +1096,6 @@ DFS123456789101112131415161718192021222324252627#include &lt;iostream&gt;using n
         <span class="sidebar-tag-name" data-tags="二分搜索"><span class="iconfont-archer">&#xe606;</span>二分搜索</span>
     
         <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
-    
-        <span class="sidebar-tag-name" data-tags="字符串"><span class="iconfont-archer">&#xe606;</span>字符串</span>
-    
-        <span class="sidebar-tag-name" data-tags="map"><span class="iconfont-archer">&#xe606;</span>map</span>
     
         <span class="sidebar-tag-name" data-tags="分治"><span class="iconfont-archer">&#xe606;</span>分治</span>
     
