@@ -1,0 +1,17 @@
+{{- define "main" }}
+
+<header class="page-header about">
+  <div class="avatar">
+    <img src="/avatar.jpg">
+  </div>
+  <h1>Chi Hsia</h1>
+  <p class="description">中文 / English / 日本語（勉強中）</p>
+  <p class="description">THUCSTer，同时陷入社工的苦海</p>
+  <p class="description">最近感兴趣的东西：HCI / 剣道 / 明日方舟 / 空洞骑士 / ……（后面都是游戏了）</p>
+  <p class="description"></p>
+</header>
+<footer class="about entry-footer">
+  {{ partial "social_icons.html" $.Site.Params.socialIcons }}
+</footer>
+
+{{- end }}{{- /* end main */ -}}
