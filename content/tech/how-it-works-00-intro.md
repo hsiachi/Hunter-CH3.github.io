@@ -1,16 +1,14 @@
 ---
 title: "How It Works Vol.0 - 序言"
-# date: 2020-09-15T11:30:03+00:00
+date: 2021-04-15T11:30:03+08:00
 # weight: 1
-# aliases: ["/first"]
 tags: ["#HowItWorks"]
 author: "Chi Hsia"
-# author: ["Me", "You"] # multiple authors
 showToc: false
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "How does it work?"
 disableHLJS: true # to disable highlightjs
 disableShare: false
@@ -20,16 +18,6 @@ searchHidden: true
 ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
 ---
 
 写一个「探究日常生活中各种技术的原理」的系列的想法其实在寒假的时候就有，当时寄希望于科协的同学们能写出来，但是开学之后并没有落实。最近在和朋友吃饭的时候常常会以「话说，……是怎么实现的」开头，感觉对话的过程很有意思，而且十分享受于用自己（浅薄的）专业知识解决问题的过程，于是做这个系列的念头就又死灰复燃了——这次自己写。
@@ -45,4 +33,3 @@ editPost:
 | 多人游戏如何进行联机 | 之前能够运用的网络知识都是基于TCP的（比如Socket、HTTP等），对于 UDP 如何处理丢包、P2P 连接是什么等等没有概念，借此机会学习一波。 |
 | 游戏加速器的原理     | 感觉这部分会分成两个部分：游戏为什么会卡顿以及游戏加速器为什么可以解决这种卡顿现象。 |
 |                      |                                                              |
-

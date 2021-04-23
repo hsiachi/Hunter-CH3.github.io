@@ -11,6 +11,8 @@ buildExpired: false
 googleAnalytics: UA-123-45
 pluralizelisttitles: "false"
 
+disqusShortname: mochiii-net
+
 minify:
     disableXML: true
     minifyOutput: true
