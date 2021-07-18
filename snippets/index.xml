@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Snippets on Chi&#39;s Blog</title>
+    <link>https://blog.mochiii.net/snippets/</link>
+    <description>Recent content in Snippets on Chi&#39;s Blog</description>
+    <image>
+      <url>https://blog.mochiii.net/static/avatar.jpg</url>
+      <link>https://blog.mochiii.net/static/avatar.jpg</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://blog.mochiii.net/snippets/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

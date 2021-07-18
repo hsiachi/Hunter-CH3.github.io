@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>#HowItWorks on Chi&#39;s Blog</title>
+    <link>https://blog.mochiii.net/tags/#howitworks/</link>
+    <description>Recent content in #HowItWorks on Chi&#39;s Blog</description>
+    <image>
+      <url>https://blog.mochiii.net/static/avatar.jpg</url>
+      <link>https://blog.mochiii.net/static/avatar.jpg</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 15 Apr 2021 11:30:03 +0800</lastBuildDate><atom:link href="https://blog.mochiii.net/tags/#howitworks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How It Works Vol.0 - 序言</title>
+      <link>https://blog.mochiii.net/tech/how-it-works-00-intro/</link>
+      <pubDate>Thu, 15 Apr 2021 11:30:03 +0800</pubDate>
+      
+      <guid>https://blog.mochiii.net/tech/how-it-works-00-intro/</guid>
+      <description>How does it work?</description>
+    </item>
+    
+  </channel>
+</rss>
